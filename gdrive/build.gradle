@@ -1,0 +1,15 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation 'com.google.api-client:google-api-client:1.30.8'
+    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.31.0'
+    implementation 'com.google.apis:google-api-services-drive:v3-rev197-1.25.0'
+    implementation 'org.apache.tika:tika-core:1.24.1'
+}
+
+
+// publish
+group = 'com.github.RomanTsarou'
+version = '0.0.1-SNAPSHOT'
+apply from: 'publish.gradle'

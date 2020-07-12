@@ -1,0 +1,18 @@
+apply plugin: 'maven'
+
+task packageJavadoc(type: Jar, dependsOn: 'javadoc') {
+    from javadoc.destinationDir
+    getArchiveClassifier().set('javadoc')
+}
+
+task packageSources(type: Jar, dependsOn: 'classes') {
+    from sourceSets.main.allSource
+    getArchiveClassifier().set('sources')
+}
+
+artifacts {
+    archives packageJavadoc
+    archives packageSources
+}
+
+
